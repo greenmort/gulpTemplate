@@ -74,7 +74,8 @@ gulp.task('scripts', function(){
     return gulp.src(locals.src.js)
         .pipe(sourcemaps.init())
         .pipe(babel({
-            presets:['env']
+            presets:['env'],
+            plugins: ['transform-runtime']
         }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(locals.output.js))
