@@ -74,15 +74,15 @@ gulp.task('scripts', function(){
     return gulp.src(locals.src.js)
         .pipe(sourcemaps.init())
         .pipe(babel({
-            presets:['env'],
-            plugins: ['transform-runtime']
+            presets:['env']
+            //plugins: ['transform-runtime']
         }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(locals.output.js))
         .pipe(reload({stream:true}));
 });
 
-gulp.task('watcher',function(){
+gulp.task('watcher',['html', 'mincss', 'scripts'],function(){
     gulp.watch(locals.src.scss, ['mincss']);
     gulp.watch(locals.src.js, ['scripts']);
     gulp.watch(locals.src.html, ['html']);

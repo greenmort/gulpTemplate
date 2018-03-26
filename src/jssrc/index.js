@@ -1,30 +1,19 @@
-const form = document.querySelector('#task-form');
-const taskList = document.querySelector('.collection');
-const clearBtn = document.querySelector('.clear-tasks');
-const filter = document.querySelector('#filter');
-const tasksInput = document.querySelector('#task');
+class User {
 
-form.addEventListener('submit', addTask);
-taskList.addEventListener('click', removeItem);
+    constructor (name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
 
-function addTask(e) {
-    if (!tasksInput.value){alert('add task!');}
-
-    const li = document.createElement('li');
-    li.className = 'collection-item';
-    li.appendChild(document.createTextNode(tasksInput.value));
-    const link = document.createElement('a');
-    link.className = 'delete-item secondary-content';
-    link.innerHTML = '<i class="fa fa-remove"></i>';
-    li.appendChild(link);
-    taskList.appendChild(li);
-    tasksInput.value='';
-
-    e.preventDefault();
-}
-
-function removeItem(e) {
-    if(e.target.classList.contains('fa-remove')){
-        e.target.parentElement.parentElement.remove();
+    sayHiTo(name){
+        let person = name;
+        return ("hello, " + person + "! My name is " + this.name + "I'm " + this.age);
     }
 }
+
+let vasya = new User("Vasya", 23, "male");
+
+document.querySelector(".class_header").addEventListener("click", () => {
+    alert(vasya.sayHiTo("Igor"));
+});
