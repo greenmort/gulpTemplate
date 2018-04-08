@@ -19,9 +19,9 @@ const locals = {
         js: './src/jssrc/**/*.js'
     },
     output: {
-        css: './public/css',
-        path: './public',
-        js:'./public/js'
+        css: './build/css',
+        path: './build',
+        js:'./build/js'
     }
 };
 
