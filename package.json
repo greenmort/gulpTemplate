@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"this is test\"",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "format": "prettier --write --single-quote --print-width=120 ./src/**/*.{js,scss};prettier --write --single-quote --print-width=120 ./src/**/**/*.{js,scss}"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "gulp-htmlmin": "^3.0.0",
     "gulp-notify": "^3.0.0",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.1"
+    "gulp-sourcemaps": "^2.6.1",
+    "prettier": "1.11.1"
   }
 }
