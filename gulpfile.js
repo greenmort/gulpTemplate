@@ -62,7 +62,7 @@ gulp.task('html', function(){
 gulp.task('browserSync', function() {
     browserSync({
         server: {
-            baseDir: "./public"
+            baseDir: "./build"
         },
         port: 8080,
         open: true,
